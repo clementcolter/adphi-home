@@ -1,1 +1,2 @@
-# adphi-home, this will be an angular project
+# adphi-home
+This will be an angular project
