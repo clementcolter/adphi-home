@@ -1,0 +1,28 @@
+<div class="max-w-5xl mx-auto my-8">
+  <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+
+    <!-- Image -->
+    <img
+      *ngIf="image"
+      [src]="image"
+      alt="Blog Image"
+      class="w-full h-80 object-cover"
+    />
+
+    <!-- Content -->
+    <div class="p-6">
+      <h2 class="text-3xl font-bold text-gray-800 mb-2">
+        {{ title }}
+      </h2>
+
+      <p class="text-sm text-gray-500 mb-4">
+        By {{ author }} • {{ date }}
+      </p>
+
+      <!-- HTML Content -->
+      <div class="text-gray-700 leading-relaxed"
+           [innerHTML]="content">
+      </div>
+    </div>
+  </div>
+</div>
