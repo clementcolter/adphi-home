@@ -9,5 +9,9 @@ export const routes: Routes = [
   {
     path: 'contribute',
     loadComponent: () => import('./contribute/contribute.component').then(m => m.ContributeComponent)
+  },
+  {
+    path: 'events-calendar',
+    loadComponent: () => import('./event-calendar/event-calendar.component').then(m => m.EventCalendarComponent)
   }
 ];
