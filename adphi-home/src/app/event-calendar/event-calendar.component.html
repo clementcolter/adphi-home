@@ -1,13 +1,14 @@
 <div class="max-w-6xl mx-auto px-4 py-16">
 
+  <!-- UPCOMING -->
   <h2 class="text-3xl font-bold text-gray-800">
     Upcoming Events
   </h2>
   <div class="w-20 h-1 bg-green-600 mt-2 mb-10"></div>
 
-  <div class="space-y-6">
+  <div class="space-y-6 mb-16">
     <app-event-card
-      *ngFor="let event of visibleEvents"
+      *ngFor="let event of upcomingEvents.slice(0, visibleCount)"
       [id]="event.id"
       [title]="event.title"
       [date]="event.date"
@@ -16,7 +17,10 @@
     >
     </app-event-card>
   </div>
-  <div class="text-center mt-10" *ngIf="hasMore">
+
+  <!-- Load More for Upcoming -->
+  <div class="text-center mb-20"
+       *ngIf="visibleCount < upcomingEvents.length">
     <button
       (click)="loadMore()"
       class="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition duration-300 shadow-md"
@@ -24,4 +28,23 @@
       Load More Events
     </button>
   </div>
+
+  <!-- PAST EVENTS -->
+  <h2 class="text-3xl font-bold text-gray-500">
+    Past Events
+  </h2>
+  <div class="w-20 h-1 bg-gray-400 mt-2 mb-10"></div>
+
+  <div class="space-y-6 opacity-75">
+    <app-event-card
+      *ngFor="let event of pastEvents"
+      [id]="event.id"
+      [title]="event.title"
+      [date]="event.date"
+      [location]="event.location"
+      [description]="event.description"
+    >
+    </app-event-card>
+  </div>
+
 </div>

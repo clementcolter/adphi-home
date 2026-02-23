@@ -14,4 +14,8 @@ export class EventCardComponent {
   @Input() date!: Date;
   @Input() location!: string;
   @Input() description!: string;
+
+  get isPast(): boolean {
+    return this.date < new Date();
+  }
 }
