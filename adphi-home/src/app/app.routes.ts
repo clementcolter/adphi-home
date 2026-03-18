@@ -13,5 +13,9 @@ export const routes: Routes = [
   {
     path: 'events-calendar',
     loadComponent: () => import('./event-calendar/event-calendar.component').then(m => m.EventCalendarComponent)
+  }, 
+  {
+    path: 'events/:id',
+    loadComponent: () => import('./event-calendar/event-calendar-detail/event-calendar-detail.component').then(m => m.EventCalendarDetailComponent)
   }
 ];

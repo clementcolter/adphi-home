@@ -14,6 +14,10 @@ export class EventCardComponent {
   @Input() date!: Date;
   @Input() location!: string;
   @Input() description!: string;
+  @Input() showDetailsLink: boolean = true;
+  @Input() compact: boolean = false;
+  @Input() image?: string;
+  @Input() category?: 'Social' | 'Philanthropy' | 'Recruitment' | 'Alumni';
 
   get isPast(): boolean {
     return this.date < new Date();

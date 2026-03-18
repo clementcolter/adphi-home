@@ -8,13 +8,14 @@
 
   <div class="space-y-6 mb-16">
     <app-event-card
-      *ngFor="let event of upcomingEvents.slice(0, visibleCount)"
+      *ngFor="let event of visibleEvents"
       [id]="event.id"
       [title]="event.title"
       [date]="event.date"
       [location]="event.location"
       [description]="event.description"
-    >
+      [image]="event.image"
+      [category]="event.category">
     </app-event-card>
   </div>
 
